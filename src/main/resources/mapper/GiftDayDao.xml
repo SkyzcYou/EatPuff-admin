@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ep.eatpuff.mapper.GiftDayMapper">
+    <select id="findAll" resultType="cn.ep.eatpuff.entity.GiftDayEntity">
+        select *
+        from gift_day
+    </select>
+    <select id="getGiftDayByMonth" parameterType="int" resultType="int">
+        select day
+        from gift_day
+        where month = #{month}
+    </select>
+    <select id="findByMonth" parameterType="int" resultType="cn.ep.eatpuff.entity.GiftDayEntity">
+        select *
+        from gift_day
+        where month = #{month}
+    </select>
+    <insert id="createGiftDay">
+        INSERT INTO gift_day (month,day,is_lock)
+        VALUES (#{month},#{day},0)
+    </insert>
+
+
+</mapper>

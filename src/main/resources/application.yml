@@ -1,0 +1,24 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/eat_puff?serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: root
+    password: youzc
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    time-zone: GMT+8
+server:
+  servlet:
+    context-path: /
+debug: true
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: cn.ep.eatpuff.entity
